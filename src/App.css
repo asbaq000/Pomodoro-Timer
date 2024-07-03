@@ -1,0 +1,162 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #343a40;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Prevents any scrollbars from appearing */
+}
+
+.container {
+  text-align: center;
+  background: #212121;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  max-width: 320px;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.time-input {
+  margin-bottom: 20px;
+}
+
+.time-input input {
+  background-color: #1a1a1a;
+  color: #fff;
+  width: 60px;
+  padding: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.time-input button {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background: #70e000;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.time-input button:hover {
+  background: #59b300;
+}
+
+.timer {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  height: 220px;
+  margin: 0 auto; /* Center the timer horizontally */
+  box-sizing: border-box; /* Ensures padding is included in width and height */
+}
+
+.progress-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 1s linear, stroke 1s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  animation: colorchange 60s linear infinite;
+}
+
+@keyframes colorchange {
+  0% {
+    stroke: #70e000;
+  }
+  25% {
+    stroke: #61d7ff;
+  }
+  50% {
+    stroke: #954ac3;
+  }
+  75% {
+    stroke: #ff616e;
+  }
+  100% {
+    stroke: #70e000;
+  }
+}
+
+.time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: bold;
+  color: #70e000;
+  animation: colorchange 60s linear infinite;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.control-button {
+  background: #1a1a1a;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #70e000;
+  font-size: 24px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.control-button:hover {
+  background: #70e000;
+  color: #212121;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  .time-input input {
+    width: 50px;
+    font-size: 14px;
+  }
+
+  .time-input button {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
+  .timer {
+    max-width: 200px;
+    height: 200px;
+  }
+
+  .time {
+    font-size: 36px;
+  }
+
+  .control-button {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    margin: 0 8px;
+  }
+}
